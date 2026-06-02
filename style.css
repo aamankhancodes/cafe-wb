@@ -1,0 +1,149 @@
+/* --- GLOBAL RESET & THEME --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #080808;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* --- FIXED VIDEO ENGINE --- */
+.video-bg-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+}
+
+#bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-overlay-tint {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.9) 100%);
+    z-index: -1;
+}
+
+/* --- PREMIUM NAVIGATION BAR --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.nav-logo { font-size: 1.8rem; font-weight: 800; }
+.nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; margin-left: 2rem; font-weight: 500; transition: color 0.3s; }
+.nav-links a:hover, .nav-links a.active { color: #ffffff; }
+.nav-btn { background: #d4af37; color: #ffffff !important; padding: 0.6rem 1.5rem; border-radius: 50px; font-weight: 600 !important; }
+
+/* --- PAGE LAYOUTS & SCROLL SECTIONS --- */
+.content-wrapper { position: relative; z-index: 10; }
+.scroll-section { min-height: 100vh; display: flex; align-items: center; padding: 8rem 10%; }
+.menu-spacing { padding-top: 8rem; padding-bottom: 5rem; }
+.text-block { max-width: 650px; }
+.text-block.container-md { max-width: 850px; margin: 0 auto; }
+.text-block.full-width { max-width: 100%; width: 100%; }
+.text-center { text-align: center; margin: 0 auto; }
+
+/* --- GLASSMORPHISM PANELS (For readable text over video) --- */
+.glass-panel {
+    background: rgba(25, 25, 25, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+}
+.padded-panel { padding: 4rem; }
+
+/* --- TYPOGRAPHY --- */
+.tagline { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 3px; color: #d4af37; font-weight: 700; display: block; margin-bottom: 1rem; }
+h1 { font-size: 4.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 0.5rem; }
+h2 { font-size: 2.2rem; font-weight: 400; color: rgba(255,255,255,0.8); margin-bottom: 2rem; }
+h3 { font-size: 3.5rem; font-weight: 800; margin-bottom: 0.5rem; }
+h4 { font-size: 1.8rem; font-weight: 700; margin-bottom: 1rem; }
+p { font-size: 1.15rem; line-height: 1.6; color: rgba(255,255,255,0.8); margin-bottom: 2rem; }
+.lead-text { font-size: 1.3rem; }
+
+/* --- BUTTONS --- */
+.cta-group { display: flex; gap: 1rem; }
+.center-group { justify-content: center; }
+.btn-primary, .btn-secondary { padding: 0.8rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: 0.3s; }
+.btn-primary { background: #ffffff; color: #000000; }
+.btn-primary:hover { background: #d4af37; color: #ffffff; }
+.btn-secondary { border: 1px solid rgba(255,255,255,0.3); color: #fff; }
+.btn-secondary:hover { background: rgba(255,255,255,0.1); }
+
+/* --- FEATURE GRID (Discover Section) --- */
+.feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem; }
+.feature-card { padding: 2.5rem; text-align: left; transition: transform 0.3s; }
+.feature-card:hover { transform: translateY(-5px); background: rgba(25, 25, 25, 0.6); }
+.feature-card .icon { font-size: 2rem; margin-bottom: 1rem; }
+.feature-card h4 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+.feature-card p { font-size: 1rem; margin-bottom: 0; color: rgba(255,255,255,0.7); }
+
+/* --- PROMISE & PERKS LIST --- */
+.promise-quote { font-style: italic; border-left: 4px solid #d4af37; padding-left: 1.5rem; margin: 2.5rem 0; font-size: 1.4rem; color: #ffffff; }
+.perks-container { margin-top: 3rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; }
+.perks-list { list-style: none; margin-top: 1.5rem; }
+.perks-list li { font-size: 1.15rem; margin-bottom: 1rem; color: rgba(255,255,255,0.9); }
+
+/* --- MENU GRID --- */
+.coffee-menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem; margin-bottom: 3rem; }
+.menu-item-card { background: rgba(25, 25, 25, 0.4); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 2rem; backdrop-filter: blur(10px); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s; }
+.menu-item-card:hover { transform: translateY(-5px); background: rgba(25, 25, 25, 0.6); }
+.item-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+.item-header h4 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0; }
+.price { color: #d4af37; font-weight: 700; font-size: 1.3rem; }
+.item-desc { font-size: 0.95rem; color: rgba(255,255,255,0.65); margin-bottom: 1.5rem; }
+.add-to-order-btn { background: transparent; color: #ffffff; border: 1px solid rgba(255,255,255,0.3); padding: 0.6rem 1rem; border-radius: 8px; font-weight: 600; cursor: pointer; width: 100%; transition: all 0.3s; }
+.add-to-order-btn:hover { background: #ffffff; color: #000000; border-color: #ffffff; }
+
+/* --- CART SUMMARY & CTA BOX --- */
+.booking-box { padding: 3rem 2rem; border-radius: 24px; text-align: center; margin-top: 2rem; }
+.action-box { background: transparent; border: none; padding: 2rem 0; margin-top: 0; }
+.highlight-tagline { font-size: 1.6rem; font-weight: 700; color: #d4af37; margin-bottom: 2rem; }
+.action-btn { padding: 1rem 2.5rem; border: none; border-radius: 50px; font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: transform 0.3s; text-decoration: none; display: inline-block; }
+.order-now { background: #ffffff; color: #000000; }
+.order-now:hover { transform: scale(1.05); background: #d4af37; color: #ffffff; }
+.outline-btn { background: transparent; color: #ffffff; border: 2px solid #ffffff; }
+.outline-btn:hover { background: #ffffff; color: #000000; }
+
+/* --- FOOTER --- */
+.mini-footer { margin-top: 4rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; }
+.footer-logo { font-size: 1.5rem; font-weight: 800; color: #ffffff; margin-bottom: 0.5rem; }
+.sub-footer-text { font-size: 0.9rem; color: rgba(255,255,255,0.5); margin-top: 0.5rem; }
+
+/* --- SARCASTIC SUCCESS MODAL --- */
+.success-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(20px); z-index: 1000; display: flex; justify-content: center; align-items: center; opacity: 0; pointer-events: none; transition: opacity 0.5s ease; }
+.success-overlay.active { opacity: 1; pointer-events: auto; }
+.premium-success-card { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); max-width: 600px; padding: 3.5rem 2.5rem; border-radius: 28px; text-align: center; transform: translateY(30px); transition: transform 0.5s; }
+.success-overlay.active .premium-success-card { transform: translateY(0); }
+.success-badge { background: rgba(212, 175, 55, 0.15); color: #d4af37; padding: 0.5rem 1.5rem; border-radius: 50px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; display: inline-block; margin-bottom: 1.5rem; }
+.success-card-title { font-size: 2.8rem; font-weight: 800; margin-bottom: 1.5rem; }
+.premium-msg-box { text-align: left; margin-bottom: 2.5rem; }
+.premium-msg-box p { font-size: 1.1rem; line-height: 1.7; color: rgba(255, 255, 255, 0.8); margin-bottom: 1.2rem; }
+.premium-close-btn { background: #ffffff; color: #000000; border: none; padding: 1rem 3rem; border-radius: 50px; font-size: 1rem; font-weight: 700; cursor: pointer; transition: 0.3s; }
+.premium-close-btn:hover { background: #d4af37; color: #ffffff; }

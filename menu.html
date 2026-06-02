@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shingle Inn | Menu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-logo">Shingle Inn</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="menu.html" class="active">Our Menu</a>
+        </div>
+    </nav>
+
+    <div class="video-bg-container">
+        <video id="bg-video" src="video-experience.mp4" playsinline muted loop autoplay preload="auto"></video>
+        <div class="video-overlay-tint"></div>
+    </div>
+
+    <div id="successModal" class="success-overlay">
+        <div class="premium-success-card">
+            <span class="success-badge">Brilliance Confirmed</span>
+            <h2 class="success-card-title">Look at You Go!</h2>
+            <div class="premium-msg-box">
+                <p><strong>A truly spectacular choice.</strong> We were just saying how someone with impeccable taste was bound to order exactly that. </p>
+                <p>Our team of highly qualified coffee artisans is currently treating your beverage selection with the mathematical precision of a space launch. It will materialize at your table in just a bit. Please sit back, bask in the warm glow of your own superior intellect, and congratulate yourself on navigating this menu so flawlessly.</p>
+            </div>
+            <button class="premium-close-btn" onclick="closeModal()">I Am Indeed Spectacular</button>
+        </div>
+    </div>
+
+    <main class="content-wrapper menu-spacing">
+        <section class="menu-page-section">
+            <div class="text-block full-width">
+                <span class="tagline">Crafted with Passion</span>
+                <h3>Our Coffee Menu</h3>
+                <p class="menu-intro">Select your favorite brew made from our premium signature roasted espresso beans.</p>
+                
+                <div class="coffee-menu-grid">
+                    <div class="menu-item-card">
+                        <div class="item-header">
+                            <h4>Cappuccino</h4>
+                            <span class="price">$4.50</span>
+                        </div>
+                        <p class="item-desc">Rich espresso layered with equal parts steamed milk and dense luxury foam.</p>
+                        <button class="add-to-order-btn" onclick="addToOrder('Cappuccino')">Select</button>
+                    </div>
+
+                    <div class="menu-item-card">
+                        <div class="item-header">
+                            <h4>Latte</h4>
+                            <span class="price">$4.75</span>
+                        </div>
+                        <p class="item-desc">Smooth espresso balanced with plenty of silky steamed milk and microfoam.</p>
+                        <button class="add-to-order-btn" onclick="addToOrder('Latte')">Select</button>
+                    </div>
+
+                    <div class="menu-item-card">
+                        <div class="item-header">
+                            <h4>Americano</h4>
+                            <span class="price">$3.80</span>
+                        </div>
+                        <p class="item-desc">Bold espresso shots diluted with hot water for a smooth, deep finish.</p>
+                        <button class="add-to-order-btn" onclick="addToOrder('Americano')">Select</button>
+                    </div>
+                    
+                    <div class="menu-item-card">
+                        <div class="item-header">
+                            <h4>Flat White</h4>
+                            <span class="price">$4.50</span>
+                        </div>
+                        <p class="item-desc">Pure velvet. Double ristretto espresso blended with perfectly textured milk.</p>
+                        <button class="add-to-order-btn" onclick="addToOrder('Flat White')">Select</button>
+                    </div>
+                </div>
+
+                <div class="booking-box">
+                    <h4>Your Cart Summary</h4>
+                    <p id="cart-status">No coffees selected yet. Don't be shy!</p>
+                    <div class="final-actions">
+                        <button class="action-btn order-now" onclick="checkoutOrder()">Confirm & Place Order</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
